@@ -84,6 +84,7 @@ function assessment (userName){
   for (let i =0; i < userName.length;i++){
     sumOfCharCode = sumOfCharCode+userName.charCodeAt(i);
   }
+  
   //文字のコード番号の合計を回答の数で割って添字の数値を求める
   const index = sumOfCharCode % answers.length;
   let result = answers[index];
@@ -91,6 +92,7 @@ function assessment (userName){
   result = result.replaceAll('###userName###',userName);
   return result;
 }
+
 // テストを行う関数
 function test() {
   console.log('診断結果の文章のテスト');
@@ -117,10 +119,8 @@ function test() {
     assessment('花子') ===
       '花子のいいところはまなざしです。花子に見つめられた人は、気になって仕方がないでしょう。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
-    )}
+    );
   
-
-
   console.log('診断結果の文章のテスト終了');
 
   console.log('同じ名前なら、同じ結果を出力することのテスト');
@@ -144,3 +144,6 @@ function test() {
  )
 
  console.log('同じ名前なら、同じ結果を出力することのテスト終了');
+}
+
+test();
